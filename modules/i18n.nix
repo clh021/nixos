@@ -8,5 +8,5 @@
     inputMethod.enabled = "fcitx5";
     inputMethod.fcitx5.addons  = [ pkgs.fcitx5-chinese-addons ];
   };
-  #console.keyMap = "us";
+  console.keyMap = "us";
 }

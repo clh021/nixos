@@ -25,11 +25,27 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.kernelModules = [ ];
+  # boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+  # https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows
+  time.hardwareClockInLocalTime = true;
+
+  # https://nixos.wiki/wiki/Accelerated_Video_Playback
+  nixpkgs.config.packageOverrides = pkgs: { vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; }; };
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [ intel-media-driver vaapiIntel vaapiVdpau libvdpau-va-gl ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [ vaapiIntel ];
+  };
+
   networking.hostName = "chenlianghong-nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless.interfaces = [ "wlp3s0" ];
-
+  hardware.cpu.intel.updateMicrocode = true;
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -65,6 +81,11 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = false;
+  hardware.enableAllFirmware = true;
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
