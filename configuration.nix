@@ -99,23 +99,45 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     tmux
+     # terminal tools
+     strace # strace -f -F -o ~/exec.log execbin
+     tcpdump # sudo tcpdump -X -i any port 7900
+     vim tmux curl gitFull wget wmctrl bat iftop htop tree
+
+     os-prober # 多系统自动添加引导
+
+     # zsh     
      oh-my-zsh
      zsh-autosuggestions
      zsh-syntax-highlighting
-     curl
-     wget
-     chromium
-     vlc
-     tdesktop
-     ark
-     zip
-     unzip
-     p7zip
+
+     # KDE dolphin 右键压缩解压缩
+     ark unrar lzop lrzip zip unzip p7zip
+
+     # fonts
      wqy_zenhei
      wqy_microhei
+
+     # application
+     chromium
+     vscodium
+     flameshot
+     pick-colour-picker 
+     redshift
+     fractal
+     vlc
+     tdesktop
+     docker docker-compose
+     nodePackages.npm
+     go go-tools protobuf
+     #dbus-glib #lithium-gecko-engine 依赖
+     virtualbox
+     # 光盘刻录软件
+     k3b cdrkit
   ];
+
+  # 启动 docker 服务
+  virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
