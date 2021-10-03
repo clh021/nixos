@@ -8,6 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/alias.nix
+#      ./modules/fcitx5
+      ./modules/i18n.nix
+      ./modules/users.nix
+#      ./modules/vscodium.nix
+      ./modules/zsh.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -19,7 +25,7 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
-  networking.hostName = "chenlianghong_nixos"; # Define your hostname.
+  networking.hostName = "chenlianghong-nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless.interfaces = [ "wlp3s0" ];
@@ -39,12 +45,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  # };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -63,24 +63,31 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lee = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "sudo" "networkmanager" ]; # Enable ‘sudo’ for the user.
-  };
-
   # List packages installed in system profile. To search, run:
+  
+  #programs.home-manager.enable = true;
+
+  #home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
+  nixpkgs.config.allowUnfree = true;
+
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     tmux
+     oh-my-zsh
+     zsh-autosuggestions
+     zsh-syntax-highlighting
+     curl
      wget
      chromium
+     vlc
+     tdesktop
      ark
      zip
      unzip
@@ -88,10 +95,6 @@
      wqy_zenhei
      wqy_microhei
   ];
-  i18n.inputMethod = {
-     enabled = "fcitx";
-     fcitx.engines = with pkgs.fcitx-engines; [ mozc hangul m17n ];
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
