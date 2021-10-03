@@ -127,6 +127,7 @@
      fractal
      vlc
      tdesktop
+     authy
      docker docker-compose
      nodePackages.npm
      go go-tools protobuf
@@ -134,6 +135,12 @@
      virtualbox
      # 光盘刻录软件
      k3b cdrkit
+
+     # other
+     # 新一代多系统启动U盘解决方案 https://www.ventoy.net/cn/doc_disk_layout_gpt.html
+     # https://github.com/ventoy/Ventoy/releases
+     # ventoy-bin
+     # 图形界面 sudo ventoyweb
   ];
 
   # 启动 docker 服务
