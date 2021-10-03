@@ -128,6 +128,7 @@
      vlc
      tdesktop
      authy
+     onlyoffice-bin
      docker docker-compose
      nodePackages.npm
      go go-tools protobuf
