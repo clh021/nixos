@@ -8,11 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/fonts.nix
       ./modules/alias.nix
-#      ./modules/fcitx5
       ./modules/i18n.nix
       ./modules/users.nix
-#      ./modules/vscodium.nix
       ./modules/zsh.nix
     ];
 
@@ -114,13 +113,9 @@
      # KDE dolphin 右键压缩解压缩
      ark unrar lzop lrzip zip unzip p7zip
 
-     # fonts
-     wqy_zenhei
-     wqy_microhei
-
      # application
      chromium
-     vscodium
+     vscode
      flameshot
      pick-colour-picker 
      redshift
