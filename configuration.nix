@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/network.nix
+      ./modules/virtualisation.nix
       ./modules/fonts.nix
       ./modules/alias.nix
       ./modules/i18n.nix
@@ -18,8 +20,8 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
+  #boot.loader.grub.efiSupport = true;
+  #boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
@@ -40,30 +42,12 @@
     extraPackages32 = with pkgs.pkgsi686Linux; [ vaapiIntel ];
   };
 
-  networking.hostName = "chenlianghong-nixos"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.wireless.interfaces = [ "wlp3s0" ];
   hardware.cpu.intel.updateMicrocode = true;
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  #networking.useDHCP = true;
-  #networking.interfaces.enp0s25.useDHCP = true;
-  #networking.interfaces.wlp3s0.useDHCP = true;
-  #networking.interfaces.wwp0s20u4.useDHCP = true;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
 
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
@@ -93,7 +77,7 @@
   
   #programs.home-manager.enable = true;
 
-  #home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
+  # home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
   nixpkgs.config.allowUnfree = true;
 
   # $ nix search wget
@@ -128,7 +112,8 @@
      nodePackages.npm
      go go-tools protobuf
      #dbus-glib #lithium-gecko-engine 依赖
-     virtualbox
+     virtualboxWithExtpack
+     #virtualboxExtpack
      # 光盘刻录软件
      k3b cdrkit
 
@@ -138,9 +123,6 @@
      # ventoy-bin
      # 图形界面 sudo ventoyweb
   ];
-
-  # 启动 docker 服务
-  virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -155,12 +137,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   services.sshd.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
