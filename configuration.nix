@@ -19,12 +19,19 @@
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  #boot.loader.grub.efiSupport = true;
+  #boot.loader.grub.version = 2;
+  boot.loader.grub.efiSupport = true;
   #boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+  #boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+  boot.loader.grub.device = "nodev"; # or "nodev" for efi only
+  boot.loader.grub.useOSProber = true;
+
+  # Use the systemd-boot EFI boot loader.
+  # boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
@@ -86,8 +93,6 @@
      strace # strace -f -F -o ~/exec.log execbin
      tcpdump # sudo tcpdump -X -i any port 7900
      vim tmux curl gitFull wget wmctrl bat iftop htop tree
-
-     os-prober # 多系统自动添加引导
 
      # zsh     
      oh-my-zsh
