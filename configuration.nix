@@ -90,10 +90,13 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     home-manager
      # terminal tools
      strace # strace -f -F -o ~/exec.log execbin
      tcpdump # sudo tcpdump -X -i any port 7900
      vim tmux curl gitFull wget wmctrl bat iftop htop tree
+     file jq iotop 
+     home-manager
 
      # zsh     
      oh-my-zsh
@@ -112,6 +115,7 @@
      fractal
      vlc
      tdesktop
+     keepassx
      authy
      onlyoffice-bin
      docker docker-compose
