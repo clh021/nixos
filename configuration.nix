@@ -15,6 +15,7 @@
       ./modules/i18n.nix
       ./modules/users.nix
       ./modules/zsh.nix
+      # ./modules/steam.nix # 不能解决 lithium-engine 运行的问题 暂用虚拟机解决
     ];
 
   # Use the GRUB 2 boot loader.
@@ -116,6 +117,7 @@
      docker docker-compose
      nodePackages.npm
      go go-tools protobuf
+     gcc
      #dbus-glib #lithium-gecko-engine 依赖
      virtualboxWithExtpack
      #virtualboxExtpack
