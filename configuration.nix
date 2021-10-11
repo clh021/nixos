@@ -87,6 +87,7 @@
 
   # home.sessionVariables = { NIXPKGS_ALLOW_UNFREE = 1; };
   nixpkgs.config.allowUnfree = true;
+  # environment.homeBinInPath = true; # 文档说 ~/bin 可用，可是没有生效
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -96,7 +97,7 @@
      tcpdump # sudo tcpdump -X -i any port 7900
      vim tmux curl gitFull wget wmctrl bat iftop htop tree
      file jq iotop 
-     home-manager
+     notify-desktop
 
      # zsh     
      oh-my-zsh
