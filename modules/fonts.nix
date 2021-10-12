@@ -26,7 +26,7 @@
           noto-fonts-emoji
           wqy_microhei
           wqy_zenhei
-          # nerdfonts # 图标字体
+          #nerdfonts # 图标字体 太大太大太大啦 # exa 使用
           # symbola  # 特殊字符
           jetbrains-mono
         ];

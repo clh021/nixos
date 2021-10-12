@@ -27,15 +27,15 @@
          "sudo" # 按两下ESC加上sudo
          "tmux" # aliases for tmux
       ];
-     # after add p10k zsh is too slow
-      customPkgs = [ pkgs.zsh-powerlevel10k ];
+      # after add p10k zsh is too slow
+      #customPkgs = [ pkgs.zsh-powerlevel10k ];
     };
     promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
   
   environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
 
-  programs.thefuck.enable = true;
+  #programs.thefuck.enable = true;
   # TODO  
   # https://discourse.nixos.org/t/installing-home-manager-from-nixos/8248
 }
