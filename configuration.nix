@@ -99,11 +99,6 @@
      file jq iotop 
      notify-desktop
 
-     # zsh     
-     oh-my-zsh
-     zsh-autosuggestions
-     zsh-syntax-highlighting
-
      # KDE dolphin 右键压缩解压缩
      ark unrar lzop lrzip zip unzip p7zip
 
@@ -120,9 +115,6 @@
      authy
      onlyoffice-bin
      docker docker-compose
-     nodePackages.npm
-     go go-tools protobuf
-     gcc
      #dbus-glib #lithium-gecko-engine 依赖
      virtualboxWithExtpack
      #virtualboxExtpack
