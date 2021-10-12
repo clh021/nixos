@@ -2,7 +2,7 @@
 
 {
   environment.shellAliases = {
-    rm = "trash";
+    rm = "rmtrash";
 
     man_cn = "man -M /usr/share/man/zh_CN";
     man_tw = "man -M /usr/share/man/zh_TW";

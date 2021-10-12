@@ -95,7 +95,7 @@
      # terminal tools
      strace # strace -f -F -o ~/exec.log execbin
      tcpdump # sudo tcpdump -X -i any port 7900
-     vim tmux curl gitFull wget wmctrl bat iftop htop tree
+     vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
      file jq iotop 
      notify-desktop
 
