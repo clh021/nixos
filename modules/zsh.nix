@@ -8,10 +8,6 @@
       strategy = "match_prev_cmd"; # one of "history", "match_prev_cmd"
     };
 
-    #programs.zsh.shellAliases =  {
-    #  ems='emaces -nw'
-    #};
-
     zsh-autoenv.enable = true;
 
     ohMyZsh = {
@@ -30,10 +26,10 @@
       # after add p10k zsh is too slow
       #customPkgs = [ pkgs.zsh-powerlevel10k ];
     };
-    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    #promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
   };
   
-  environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
+  #environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
 
   #programs.thefuck.enable = true;
   # TODO  
