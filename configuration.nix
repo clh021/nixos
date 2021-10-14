@@ -111,7 +111,8 @@
      fractal
      vlc
      tdesktop
-     keepassx
+     # keepass
+     keepassxc
      authy
      onlyoffice-bin
      docker docker-compose
