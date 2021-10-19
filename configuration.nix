@@ -71,7 +71,17 @@
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+
+  # Configuration of pulseaudio to facilitate bluetooth headphones and Steam.
+  hardware.pulseaudio = {
+    enable = true;
+    # 32 bit support for steam.
+    support32Bit = true;
+    # NixOS allows either a lightweight build (default) or full build of PulseAudio to be installed.
+    # Only the full build has Bluetooth support, so it must be selected here.
+    package = pkgs.pulseaudioFull;
+  };
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = false;
@@ -92,6 +102,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      home-manager
+     appimage-run
+     steam-run
      # terminal tools
      strace # strace -f -F -o ~/exec.log execbin
      tcpdump # sudo tcpdump -X -i any port 7900
