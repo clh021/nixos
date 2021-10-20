@@ -101,45 +101,57 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     home-manager
-     appimage-run
-     steam-run
-     # terminal tools
-     strace # strace -f -F -o ~/exec.log execbin
-     tcpdump # sudo tcpdump -X -i any port 7900
-     dig
-     vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
-     file jq iotop 
-     notify-desktop
+    home-manager
+    appimage-run
+    steam-run
+    # terminal tools
+    strace # strace -f -F -o ~/exec.log execbin
+    tcpdump # sudo tcpdump -X -i any port 7900
+    dig # domain info Groper
+    ffmpeg
+    vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
+    file jq iotop 
+    notify-desktop
 
-     # KDE dolphin 右键压缩解压缩
-     ark unrar lzop lrzip zip unzip p7zip
+    # KDE dolphin 右键压缩解压缩
+    ark unrar lzop lrzip zip unzip p7zip
 
-     # application
-     chromium
-     vscode
-     flameshot
-     pick-colour-picker 
-     redshift
-     fractal
-     vlc
-     tdesktop
-     # keepass
-     keepassxc
-     authy
-     onlyoffice-bin
-     docker docker-compose
-     #dbus-glib #lithium-gecko-engine 依赖
-     virtualboxWithExtpack
-     #virtualboxExtpack
-     # 光盘刻录软件
-     k3b cdrkit
+    # application
+    chromium
+    vscode
+    flameshot
+    pick-colour-picker 
+    redshift
+    fractal
+    vlc
+    tdesktop
+    # keepass
+    keepassxc
+    authy
+    onlyoffice-bin
+    docker docker-compose
+    #dbus-glib #lithium-gecko-engine 依赖
+    virtualboxWithExtpack
+    #virtualboxExtpack
+    # 光盘刻录软件
+    k3b cdrkit
 
-     # other
-     # 新一代多系统启动U盘解决方案 https://www.ventoy.net/cn/doc_disk_layout_gpt.html
-     # https://github.com/ventoy/Ventoy/releases
-     # ventoy-bin
-     # 图形界面 sudo ventoyweb
+    # dev
+    x11docker
+    autoconf
+    automake
+    gcc
+    go go-tools protobuf
+    php
+    nodejs
+    libev
+    openssl
+
+    # other
+    # 新一代多系统启动U盘解决方案 https://www.ventoy.net/cn/doc_disk_layout_gpt.html
+    # https://github.com/ventoy/Ventoy/releases
+    # ventoy-bin
+    # 图形界面 sudo ventoyweb
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
