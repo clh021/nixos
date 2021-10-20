@@ -24,8 +24,8 @@
   networking.firewall.allowPing = false;
   networking.firewall.rejectPackets = true;
 
-  #networking.extraHosts =
-  #''
-  #  151.101.76.133 raw.githubusercontent.com
-  #'';
+  networking.extraHosts =
+  ''
+    172.17.0.3 gateway.netlier.cn
+  '';
 }
