@@ -109,6 +109,7 @@
     tcpdump # sudo tcpdump -X -i any port 7900
     dig # domain info Groper
     ffmpeg
+    xdotool #模拟击键和鼠标移动, 键盘精灵, xdotool 模拟用户交互
     vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
     file jq iotop 
     notify-desktop
