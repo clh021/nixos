@@ -19,7 +19,7 @@
 
   # Open ports in the firewall.
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 8000 8080];
+  networking.firewall.allowedTCPPorts = [ 22 80 3389 8000 8080];
   networking.firewall.allowedUDPPorts = [ 5353 ];
   networking.firewall.allowPing = false;
   networking.firewall.rejectPackets = true;

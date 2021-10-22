@@ -61,6 +61,8 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "startplasma-x11";
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -106,11 +108,12 @@
     steam-run
     # terminal tools
     strace # strace -f -F -o ~/exec.log execbin
+    traceroute # 跟踪数据包通过 IP 网络所采用的路由
     tcpdump # sudo tcpdump -X -i any port 7900
     dig # domain info Groper
     ffmpeg
     xdotool #模拟击键和鼠标移动, 键盘精灵, xdotool 模拟用户交互
-    vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
+    emacs vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
     file jq iotop 
     notify-desktop
 
@@ -125,6 +128,7 @@
     redshift
     fractal
     vlc
+    remmina
     tdesktop
     # keepass
     keepassxc
