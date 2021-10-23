@@ -15,7 +15,6 @@
       ./modules/i18n.nix
       ./modules/users.nix
       ./modules/zsh.nix
-      # ./modules/steam.nix # 不能解决 lithium-engine 运行的问题 暂用虚拟机解决
     ];
 
   # Use the GRUB 2 boot loader.
@@ -114,8 +113,9 @@
     ffmpeg
     xdotool #模拟击键和鼠标移动, 键盘精灵, xdotool 模拟用户交互
     emacs vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
-    file jq iotop 
+    file jq iotop pstree ntfs3g 
     notify-desktop
+    zeal
 
     # KDE dolphin 右键压缩解压缩
     ark unrar lzop lrzip zip unzip p7zip
