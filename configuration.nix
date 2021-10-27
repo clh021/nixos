@@ -103,6 +103,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
+    direnv
     appimage-run
     appstream # appImage 打包依赖
     steam-run
