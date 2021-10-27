@@ -105,7 +105,6 @@
     home-manager
     direnv
     appimage-run
-    appstream # appImage 打包依赖
     steam-run
     # terminal tools
     strace # strace -f -F -o ~/exec.log execbin
@@ -143,15 +142,6 @@
     # 光盘刻录软件
     # k3b cdrkit # 并不能刻录
 
-    # dev
-    #x11docker
-    #autoconf
-    #automake
-    #gcc
-    #go go-tools protobuf
-    #php
-    #nodejs
-    libev
     openssl
 
     # other
