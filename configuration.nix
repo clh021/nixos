@@ -141,16 +141,16 @@
     virtualboxWithExtpack
     #virtualboxExtpack
     # 光盘刻录软件
-    k3b cdrkit
+    # k3b cdrkit # 并不能刻录
 
     # dev
-    x11docker
-    autoconf
-    automake
-    gcc
-    go go-tools protobuf
-    php
-    nodejs
+    #x11docker
+    #autoconf
+    #automake
+    #gcc
+    #go go-tools protobuf
+    #php
+    #nodejs
     libev
     openssl
 
