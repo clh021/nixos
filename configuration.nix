@@ -104,6 +104,7 @@
   environment.systemPackages = with pkgs; [
     home-manager
     appimage-run
+    appstream # appImage 打包依赖
     steam-run
     # terminal tools
     strace # strace -f -F -o ~/exec.log execbin
