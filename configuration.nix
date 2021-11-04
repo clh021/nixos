@@ -59,6 +59,13 @@
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+# services.xserver.desktopManager.xfce.enable = true;
+# services.xserver.desktopManager.gnome3.enable = true;
+# services.xserver.desktopManager.mate.enable = true;
+# services.xserver.windowManager.xmonad.enable = true;
+# services.xserver.windowManager.twm.enable = true;
+# services.xserver.windowManager.icewm.enable = true;
+# services.xserver.windowManager.i3.enable = true;
   
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "startplasma-x11";
@@ -115,7 +122,7 @@
     ffmpeg
     xdotool #模拟击键和鼠标移动, 键盘精灵, xdotool 模拟用户交互
     tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
-    vim # vimPlugins.ipython vimPlugins.vim-addon-syntax-checker vimPlugins.vim-addon-nix
+    vim neovim # vimPlugins.ipython vimPlugins.vim-addon-syntax-checker vimPlugins.vim-addon-nix
     file jq iotop pstree ntfs3g 
     notify-desktop
     # zeal

@@ -7,6 +7,7 @@
   # networking.wireless.enable = true; 
  
   networking.networkmanager.enable = true;
+  networking.timeServers = options.networking.timeServers.default ++ [ "time1.aliyun.com" ];
  
   # use nmcil/nmtui to manager network 
   # programs.nm-applet.enable = true;
