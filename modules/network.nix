@@ -1,4 +1,4 @@
-{ ... }:
+{ options, ... }:
 
 {
   networking.hostName = "chenlianghong-nixos"; # Define your hostname.
