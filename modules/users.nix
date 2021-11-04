@@ -2,7 +2,7 @@
 {
   users.users.lee = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" "audio" "sound" "video" "input" "tty" "camera"]; 
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "vboxusers" "docker" "audio" "sound" "video" "input" "tty" "camera"]; 
   };
   users.defaultUserShell = pkgs.zsh;
 

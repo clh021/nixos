@@ -111,12 +111,14 @@
     traceroute # 跟踪数据包通过 IP 网络所采用的路由
     tcpdump # sudo tcpdump -X -i any port 7900
     dig # domain info Groper
+    # telnet inetutils # todo test
     ffmpeg
     xdotool #模拟击键和鼠标移动, 键盘精灵, xdotool 模拟用户交互
-    emacs vim tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
+    tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
+    vim # vimPlugins.ipython vimPlugins.vim-addon-syntax-checker vimPlugins.vim-addon-nix
     file jq iotop pstree ntfs3g 
     notify-desktop
-    zeal
+    # zeal
 
     # KDE dolphin 右键压缩解压缩
     ark unrar lzop lrzip zip unzip p7zip

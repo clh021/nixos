@@ -6,7 +6,8 @@
   
   # virtualbox
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "lee" ];
+  users.extraGroups.vboxusers.members = [ "lee" "root" ];
+
   # virtualbox exts (for use with usb)
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.host.enableHardening = false;
