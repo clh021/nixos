@@ -26,6 +26,8 @@
     os-upgrade = "echo https://github.com/nixos-cn/NixOS-FAQ/blob/main/answers/how-to-upgrade-nixos-version.md;";
     # os-clean = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +15;nix-env --delete-generations +5;"; # 下面的 gc 配置会自动清理
     # os-rollback = ""; # 系统降级
+    os-channel-set = "sudo nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-21.05 nixos;nix-channel --update";
+    os-clean-env-install ="nix-env -e '*'"; # clean nix-env -i, replace with configurate
   };
 
   # nix-collect-garbage --delete-older-than 15d

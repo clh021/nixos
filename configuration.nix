@@ -59,9 +59,9 @@
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
   # services.xserver.desktopManager.gnome3.enable = true;
-  services.xserver.desktopManager.mate.enable = true;
+  # services.xserver.desktopManager.mate.enable = true;
   # services.xserver.windowManager.xmonad.enable = true;
   # services.xserver.windowManager.twm.enable = true;
   # services.xserver.windowManager.icewm.enable = true;
@@ -109,6 +109,11 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # utils todo test
+    inetutils
+    binutils
+    usbutils
+
     home-manager
     direnv
     appimage-run
@@ -118,7 +123,7 @@
     traceroute # 跟踪数据包通过 IP 网络所采用的路由
     tcpdump # sudo tcpdump -X -i any port 7900
     dig # domain info Groper
-    # telnet inetutils # todo test
+    # telnet # todo test
     ffmpeg
     xdotool #模拟击键和鼠标移动, 键盘精灵, xdotool 模拟用户交互
     tmux curl gitFull wget wmctrl bat iftop htop tree rmtrash
@@ -134,7 +139,7 @@
     chromium
     vscode
     flameshot
-    pick-colour-picker 
+    # pick-colour-picker 
     redshift
     fractal
     vlc
@@ -142,11 +147,11 @@
     tdesktop
     # keepass
     keepassxc
-    authy
-    onlyoffice-bin
-    docker docker-compose
+    # authy
+    # onlyoffice-bin
+    # docker docker-compose # 
     #dbus-glib #lithium-gecko-engine 依赖
-    virtualboxWithExtpack
+    # virtualboxWithExtpack
     #virtualboxExtpack
     # 光盘刻录软件
     # k3b cdrkit # 并不能刻录
@@ -181,6 +186,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.05"; # Did you read the comment?
-  nix.binaryCaches = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nix.binaryCaches = [ "https://mirrors.ustc.edu.cn/nix-channels/store" "https://cache.nixos.org/" ];
 }
 

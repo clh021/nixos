@@ -16,8 +16,6 @@
           defaultFonts.sansSerif = [ "DejaVu Sans" ];
           defaultFonts.serif = [ "DejaVu Serif" "Source Han Serif SC" ];                
 	};
-        
-        fontDir.enable = true;
         enableGhostscriptFonts = true;
         fonts = with pkgs; [
           # sarasa-gothic
@@ -28,7 +26,7 @@
           wqy_zenhei
           #nerdfonts # 图标字体 太大太大太大啦 # exa 使用
           # symbola  # 特殊字符
-          jetbrains-mono
+          # jetbrains-mono
         ];
   };
 }
