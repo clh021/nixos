@@ -59,13 +59,13 @@
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-# services.xserver.desktopManager.xfce.enable = true;
-# services.xserver.desktopManager.gnome3.enable = true;
-# services.xserver.desktopManager.mate.enable = true;
-# services.xserver.windowManager.xmonad.enable = true;
-# services.xserver.windowManager.twm.enable = true;
-# services.xserver.windowManager.icewm.enable = true;
-# services.xserver.windowManager.i3.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.mate.enable = true;
+  # services.xserver.windowManager.xmonad.enable = true;
+  # services.xserver.windowManager.twm.enable = true;
+  # services.xserver.windowManager.icewm.enable = true;
+  # services.xserver.windowManager.i3.enable = true;
   
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "startplasma-x11";
