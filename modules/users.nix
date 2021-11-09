@@ -4,19 +4,11 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "libvirtd" "vboxusers" "docker" "audio" "sound" "video" "input" "tty" "camera"]; 
   };
-  users.users.mate = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "vboxusers" "docker" "audio" "sound" "video" "input" "tty" "camera"];
-  };
-  users.users.xfce = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "vboxusers" "docker" "audio" "sound" "video" "input" "tty" "camera"];
-  };
   users.defaultUserShell = pkgs.zsh;
 
   security.sudo.extraRules = [
     {
-      users = [ "lee" "mate" "xfce" ];
+      users = [ "lee" ];
       commands = [
         {
           command = "ALL";
